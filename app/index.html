@@ -50,11 +50,11 @@
     </div>
     <div class="promo__subs">
       <div class="promo__subs-content wrapper">
-        <form class="subs-form" id="subs-form">
+        <form class="subs-form" id="subsForm">
           <div class="subs-form__group">
-            <input class="subs-form__email" type="email" id="email" name="email"
-              placeholder="Enter your Email and get notified" required />
-            <button class="subs-form__button" type="submit"><span class="vh">Send</span></button>
+            <input class="subs-form__email" type="email" id="subsEmail" name="email"
+              placeholder="Enter your Email and get notified" pattern="^\S+@\S+\.\S+$" required />
+            <button class="subs-form__button" type="submit" aria-label="Send"><span class="vh">Send</span></button>
           </div>
         </form>
       </div>
@@ -62,19 +62,18 @@
   </section>
 
 
+  <div class="modal-overlay hidden" id="popupOverlay"></div>
 
   <div class="modal hidden" id="popup">
     <div class="modal__content">
-      <b class="modal__title">SUCCESS!</b>
-      <p class="modal__text" id="popup-message">You have successfully subscribed to the email newsletter</p>
-      <button class="modal__button" type="button" id="close-modal">Close</button>
+      <b class="modal__title" id="popupTypeMessage"></b>
+      <p class="modal__text" id="popupMessage"></p>
+      <button class="modal__button" type="button" id="popupCloseButton">Close</button>
     </div>
-    <button class="modal__close" type="button" id="close-modal">
+    <button class="modal__close" type="button" id="popupCloseCross" aria-label="Close">
       <span class="vh">Close</span>
     </button>
   </div>
-
-  <div class="modal-overlay hidden" id="backdrop"></div>
 
   <script src="./js/main.min.js"></script>
 </body>

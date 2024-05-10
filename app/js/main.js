@@ -38,3 +38,88 @@ updateCountdown();
 if (getDifference() > 0) {
   countdownInterval = setInterval(updateCountdown, 1000);
 }
+
+
+
+
+const form = document.getElementById("subsForm");
+const popupOverlay = document.getElementById("popupOverlay");
+const popup = document.getElementById("popup");
+const popupTypeMessage = document.getElementById("popupTypeMessage");
+const popupMessage = document.getElementById("popupMessage");
+const popupCloseButton = document.getElementById("popupCloseButton");
+const popupCloseCross = document.getElementById("popupCloseCross");
+
+form.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  const email = document.getElementById("subsEmail");
+
+  if (!validateEmail(email.value) || !email.checkValidity()) {
+    showPopup("Invalid email address", "error");
+    return;
+  }
+
+  fetch(getRandomResponseStatus(), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email.value
+      })
+    })
+    .then(response => {
+      if (response.ok) {
+        showPopup("You have successfully subscribed to the email newsletter", "success");
+      } else {
+        showPopup("An error occurred. Please try again later", "error");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      showPopup("An error occurred. Please try again later", "error");
+    });
+});
+
+// Валидация email
+function validateEmail(email) {
+  return /\S+@\S+\.\S+/.test(email);
+}
+
+// Окрытие Popup
+function showPopup(message, type) {
+  popupTypeMessage.textContent = type + '!';
+  popupMessage.textContent = message;
+
+  document.body.classList.add("modal-open");
+  popupOverlay.classList.remove("hidden");
+  popup.classList.remove("hidden");
+
+  popupCloseButton.addEventListener("click", onPopupCloseHandler);
+  popupCloseCross.addEventListener("click", onPopupCloseHandler);
+}
+
+// Закрытие Popup
+function hiddenPopup() {
+  popup.classList.add("hidden");
+  popupOverlay.classList.add("hidden");
+  document.body.classList.remove("modal-open");
+
+  popupCloseButton.removeEventListener("click", onPopupCloseHandler);
+  popupCloseCross.removeEventListener("click", onPopupCloseHandler);
+}
+
+const onPopupCloseHandler = function () {
+  hiddenPopup();
+};
+
+// Функция вернёт рандомный ответ(url) для fetch запроса
+function getRandomResponseStatus() {
+  const statuses = {
+    200: "https://run.mocky.io/v3/6379eb88-c99d-4874-9fdc-055234afd514",
+    400: "https://run.mocky.io/v3/02e38f75-27c6-4a7d-a69e-f50a9b0991e6"
+  };
+
+  return Math.random() < 0.5 ? statuses[200] : statuses[400];
+}
