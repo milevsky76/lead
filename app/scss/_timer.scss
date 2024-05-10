@@ -1,0 +1,75 @@
+.timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  max-width: 588px;
+  min-height: 129px;
+}
+
+.timer__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: 132px;
+}
+
+.timer__value,
+.timer__separator {
+  font-size: 72px;
+  line-height: 1;
+  font-weight: var(--fw-semi-bold);
+}
+
+.timer__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 54px;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--clr-neutral-100);
+  background-image: url("../img/src/label.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.timer__label::before {
+  content: attr(data-text);
+}
+
+@media (max-width: 768px) {
+  .timer {
+    max-width: 358px;
+    min-height: 82px;
+  }
+
+  .timer__item {
+    gap: 6px;
+    width: 64px;
+  }
+
+  .timer__value,
+  .timer__separator {
+    font-size: 36px;
+  }
+
+  .timer__label {
+    width: 64px;
+    height: 40px;
+    font-size: 12px;
+    background-image: url("../img/src/label-tablet.svg");
+  }
+
+  .timer__label::before {
+    content: attr(data-text-tablet);
+  }
+}
+
+@media (max-width: 360px) {
+  .timer {
+    max-width: 310px;
+  }
+}

@@ -1,11 +1,17 @@
-$mobile-width: 360px;
-$table-width: 768px;
-$desktop-width: 1920px;
-
 :root {
-  --blue: #162c4e;
-  --blue2: #1D4169;
-  --white: #ffffff;
-  --red: #df2224;
-  --black: #000000;
+  --indentation: 20px;
+
+  --ff-primary: "Poppins", sans-serif;
+  --ff-input: "Roboto", sans-serif;
+
+  --clr-primary-200: #135978; //--border: #135978;
+  --clr-primary-300: #1D4169; //--blue2: #1D4169;
+  --clr-primary-400: #162c4e; //--blue: #162c4e;
+  --clr-accent: #df2224; //--red: #df2224;
+  --clr-neutral-100: #ffffff; //--white: #ffffff;
+  --clr-neutral-900: #000000; //--black: #000000;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
 }

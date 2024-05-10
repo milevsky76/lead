@@ -88,7 +88,7 @@ function validateEmail(email) {
 }
 
 // Окрытие Popup
-function showPopup(message, type) {
+function showPopup(message = '', type = '') {
   popupTypeMessage.textContent = type + '!';
   popupMessage.textContent = message;
 
