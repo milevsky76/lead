@@ -2,18 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LEAD</title>
-  <!-- <link rel="preload" href="./fonts/.woff2" type="font/woff2" as="font"> -->
-  <link rel="stylesheet" href="./css/style.min.css" />
+  <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body>
   <section class="promo">
     <div class="promo__content wrapper">
       <a class="promo__logo logo" href="/">
-        <img class="logo__image" src="./img/src/logo.svg" width="190" height="60" alt="Logo" />
+        <img class="logo__image" src="./img/src/logo.svg" width="190" height="60" alt="Logo">
       </a>
 
       <h2 class="promo__title">Under Construction</h2>
@@ -21,25 +20,25 @@
         We're making lots of improvements and will be back soon
       </p>
 
-      <div class="promo__timer timer-block">
-        <div class="timer-block__item">
-          <span class="timer-block__value" id="timerDays">00</span>
-          <span class="timer-block__label" data-text="Days" data-text-tablet="DD"></span>
+      <div class="promo__timer timer">
+        <div class="timer__item">
+          <span class="timer__value" id="timerDays">00</span>
+          <span class="timer__label" data-text="Days" data-text-tablet="DD"></span>
         </div>
-        <span class="timer-block__separator">:</span>
-        <div class="timer-block__item">
-          <span class="timer-block__value" id="timerHours">00</span>
-          <span class="timer-block__label" data-text="Hours" data-text-tablet="HH"></span>
+        <span class="timer__separator">:</span>
+        <div class="timer__item">
+          <span class="timer__value" id="timerHours">00</span>
+          <span class="timer__label" data-text="Hours" data-text-tablet="HH"></span>
         </div>
-        <span class="timer-block__separator">:</span>
-        <div class="timer-block__item">
-          <span class="timer-block__value" id="timerMinutes">00</span>
-          <span class="timer-block__label" data-text="Minutes" data-text-tablet="MM"></span>
+        <span class="timer__separator">:</span>
+        <div class="timer__item">
+          <span class="timer__value" id="timerMinutes">00</span>
+          <span class="timer__label" data-text="Minutes" data-text-tablet="MM"></span>
         </div>
-        <span class="timer-block__separator">:</span>
-        <div class="timer-block__item">
-          <span class="timer-block__value" id="timerSeconds">00</span>
-          <span class="timer-block__label" data-text="Seconds" data-text-tablet="SS"></span>
+        <span class="timer__separator">:</span>
+        <div class="timer__item">
+          <span class="timer__value" id="timerSeconds">00</span>
+          <span class="timer__label" data-text="Seconds" data-text-tablet="SS"></span>
         </div>
       </div>
 
@@ -53,14 +52,13 @@
         <form class="subs-form" id="subsForm">
           <div class="subs-form__group">
             <input class="subs-form__email" type="email" id="subsEmail" name="email"
-              placeholder="Enter your Email and get notified" pattern="^\S+@\S+\.\S+$" required />
+              placeholder="Enter your Email and get notified" pattern="^\S+@\S+\.\S+$" required>
             <button class="subs-form__button" type="submit" aria-label="Send"><span class="vh">Send</span></button>
           </div>
         </form>
       </div>
     </div>
   </section>
-
 
   <div class="modal-overlay hidden" id="popupOverlay"></div>
 
