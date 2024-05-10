@@ -1,0 +1,73 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 320px;
+  padding: 16px;
+  background-color: white;
+  border: 1px solid rgba(19, 90, 120, 0.07);
+  border-radius: 2px;
+  z-index: 1000;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  padding: 80px 0 50px;
+  text-align: center;
+}
+
+.modal__title {
+  font-size: 36px;
+  line-height: 1.04;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.modal__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__button {
+  width: 100%;
+  max-width: 200px;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--white);
+  background-color: var(--blue2);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.modal__close {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  background-image: url('../img/src/icon-close.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: color-mix(in srgb, var(--blue) 60%, transparent);
+  z-index: 999;
+}

@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 360px;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--black);
+
+  background-color: var(--white);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  --indentation: 20px;
+
+  width: min(calc(1704px + var(--indentation) * 2), 100%);
+  margin-inline: auto;
+  padding-inline: var(--indentation);
+
+  // outline: 1px solid red;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    --indentation: 40px;
+  }
+}
+
+.vh {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.non {
+  display: none !important;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+// .non-container {
+//   width: 100vw; /* 100% ширины вьюпорта */
+//   position: relative;  /*включаем left */
+//   left: 50%; /* устанавливаем левый край non-container в центр container'a */
+//   transform: translateX(-50%); /* двигаем non-container влево на 50% его ширины */
+// }
