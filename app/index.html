@@ -9,18 +9,19 @@
 </head>
 
 <body>
+  <h1 class="vh">LEAD Advisors</h1>
   <section class="promo">
     <div class="promo__content wrapper">
       <a class="promo__logo logo" href="/">
-        <img class="logo__image" src="./img/src/logo.svg" width="190" height="60" alt="Logo">
+        <img class="logo__image" src="./img/logo.svg" width="190" height="60" alt="Logo">
       </a>
 
-      <h2 class="promo__title">Under Construction</h2>
-      <p class="promo__description">
+      <h2 class="promo__title title">Under Construction</h2>
+      <p class="promo__description an">
         We're making lots of improvements and will be back soon
       </p>
 
-      <div class="promo__timer timer">
+      <div class="promo__timer timer an">
         <div class="timer__item">
           <span class="timer__value" id="timerDays">00</span>
           <span class="timer__label" data-text="Days" data-text-tablet="DD"></span>
@@ -42,20 +43,265 @@
         </div>
       </div>
 
-      <div class="promo__wait wait">
+      <div class="promo__wait wait an">
         <p class="wait__text">Check our event page when you wait:</p>
         <a class="wait__button" href="https://example.com" target="_blank">Go to the event</a>
       </div>
     </div>
     <div class="promo__subs">
       <div class="promo__subs-content wrapper">
-        <form class="subs-form" id="subsForm">
+        <form class="promo__subs-form subs-form" id="subsForm">
           <div class="subs-form__group">
             <input class="subs-form__email" type="email" id="subsEmail" name="email"
               placeholder="Enter your Email and get notified" pattern="^\S+@\S+\.\S+$" required>
             <button class="subs-form__button" type="submit" aria-label="Send"><span class="vh">Send</span></button>
           </div>
         </form>
+        <a class="promo__subs-event" href="#event">Other Events</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="event" id="event">
+    <div class="wrapper">
+      <h2 class="event__title title">All events</h2>
+
+      <div class="event__accordion accordion">
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="Meeting">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title" data-dt data-text-tablet="Meeting"
+                  data-text-mobile="Custom Home Automation">Hawaiian party</h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg" alt="Meeting">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text" data-dt data-text-tablet="Meeting"
+              data-text-mobile="Custom Home Automation">Hawaiian party</span>
+          </button>
+        </div>
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="Meeting">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title" data-dt data-text-tablet="Meeting"
+                  data-text-mobile="Whole Home Audio Solutions">Мafia party</h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg" alt="Meeting">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text" data-dt data-text-tablet="Meeting"
+              data-text-mobile="Whole Home Audio Solutions">Мafia party</span>
+          </button>
+        </div>
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="Party">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title" data-dt data-text-tablet="Party" data-text-mobile="Distributed Video">Party
+                </h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg" alt="Party">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text" data-dt data-text-tablet="Party"
+              data-text-mobile="Distributed Video">Party</span>
+          </button>
+        </div>
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="Party on the beach">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title" data-dt data-text-tablet="Party on the beach"
+                  data-text-mobile="Lighting Control">Party on the beach</h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg" alt="Party on the beach">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text" data-dt data-text-tablet="Party on the beach"
+              data-text-mobile="Lighting Control">Party on the beach</span>
+          </button>
+        </div>
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="Home Security">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title" data-dt data-text-tablet="Home Security" data-text-mobile="Home Security">
+                  Home Security</h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg" alt="Home Security">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text">Home Security</span>
+          </button>
+        </div>
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="Network Design & Implementation">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title">Network Design & Implementation</h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg"
+                alt="Network Design & Implementation">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text">Network Design & Implementation</span>
+          </button>
+        </div>
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="System Design & Engineering">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title">System Design & Engineering</h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg" alt="System Design & Engineering">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text">System Design & Engineering</span>
+          </button>
+        </div>
+
+        <div class="accordion__item">
+          <div class="accordion__content" aria-hidden="true">
+            <div class="accordion__wrapper">
+              <div class="accordion__image-wrap">
+                <picture>
+                  <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+                  <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+                  <img class="accordion__image" src="./img/event-desktop-1.jpg" alt="Client Care Plans">
+                </picture>
+              </div>
+              <div class="accordion__drop">
+                <h2 class="accordion__title">Client Care Plans</h2>
+                <time class="accordion__date" datetime="2023-02-13">13.02.2023</time>
+                <a class="accordion__button" href="https://example.com" target="_blank">More information</a>
+              </div>
+            </div>
+          </div>
+          <button class="accordion__trigger" aria-expanded="false">
+            <picture>
+              <source srcset="./img/event-mobile-1.jpg" media="(max-width: 360px)">
+              <source srcset="./img/event-tablet-1.jpg" media="(max-width: 768px)">
+              <img class="accordion__trigger-image" src="./img/event-desktop-1.jpg" alt="Client Care Plans">
+            </picture>
+            <span class="accordion__trigger-overlay"></span>
+            <span class="accordion__trigger-text">Client Care Plans</span>
+          </button>
+        </div>
+
       </div>
     </div>
   </section>
