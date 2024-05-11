@@ -123,3 +123,68 @@ function getRandomResponseStatus() {
 
   return Math.random() < 0.5 ? statuses[200] : statuses[400];
 }
+
+
+
+
+const eventAccordion = document.querySelector(".event__accordion");
+const firstAccordionItem = eventAccordion.querySelector(".accordion__item");
+
+// Открываем первую панель при загрузке страницы
+toggleAccordion(firstAccordionItem);
+
+// Добавляем обработчик события на все кнопки аккордеона
+eventAccordion.querySelectorAll(".accordion__trigger").forEach(item => {
+  item.addEventListener("click", function (evt) {
+    const currentSelection = evt.target.closest(".accordion__item");
+    if (!currentSelection) return;
+    toggleAccordion(currentSelection);
+  });
+});
+
+function toggleAccordion(currentItem) {
+  const currentButton = currentItem.querySelector(".accordion__trigger");
+  const currentContent = currentItem.querySelector(".accordion__content");
+
+  if (currentButton.getAttribute("aria-expanded") !== 'true') {
+    const activeButton = eventAccordion.querySelector('.accordion__trigger[aria-expanded="true"]');
+
+    if (activeButton) {
+      const activeContent = activeButton.parentNode.querySelector('.accordion__content');
+
+      activeButton.setAttribute('aria-expanded', false);
+      activeContent.setAttribute('aria-hidden', true);
+    }
+
+    currentButton.setAttribute('aria-expanded', true);
+    currentContent.setAttribute('aria-hidden', false);
+  }
+}
+
+
+
+updateText();
+
+// Получаем все элементы с атрибутом data-text-tablet
+function updateText() {
+  let dts = document.querySelectorAll('[data-dt]');
+
+  if (window.innerWidth <= 360) {
+    console.log(1);
+    dts.forEach(function (dt) {
+      const mobileText = dt.getAttribute('data-text-mobile');
+
+      if (mobileText) {
+        dt.textContent = mobileText;
+      }
+    });
+  } else if (window.innerWidth <= 768) {
+    dts.forEach(function (dt) {
+      const tabletText = dt.getAttribute('data-text-tablet');
+
+      if (tabletText) {
+        dt.textContent = tabletText;
+      }
+    });
+  }
+}

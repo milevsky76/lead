@@ -21,7 +21,7 @@
   position: absolute;
   width: var(--_width);
   height: var(--_height);
-  background-image: url("../img/src/spot.svg");
+  background-image: url("../img/spot.svg");
   background-position: 0 0;
   background-size: var(--_width) var(--_height);
   background-repeat: no-repeat;
@@ -35,6 +35,7 @@
   top: -166px;
   left: -201px;
   rotate: -24deg;
+  animation: slideDecorBefore 2s forwards;
 }
 
 .promo::after {
@@ -44,23 +45,22 @@
   top: -377px;
   right: -408px;
   rotate: -84.96deg;
+  animation: slideDecorAfter 2s forwards;
 }
 
 .promo__logo {
   margin-top: 60px;
   margin-bottom: 93px;
+
+  animation: slideLogo 2s forwards;
 }
 
 .promo__title {
   margin: 0;
   margin-bottom: 8px;
   padding: 0;
-  font-size: 72px;
-  line-height: 1.04;
-  font-weight: var(--fw-bold);
-  text-align: center;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--clr-primary-400) 39%, transparent);
+
+  animation: slideTitle 1s forwards;
 }
 
 .promo__description {
@@ -77,7 +77,7 @@
 }
 
 .promo__wait {
-  margin-bottom: 76px;
+  margin-bottom: 156px;
 }
 
 .promo__subs {
@@ -89,8 +89,51 @@
 }
 
 .promo__subs-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.promo__subs-form {
+  margin-inline: auto;
+  place-items: center;
+  grid-column: 2 / 3;
+  min-width: 440px;
+}
+
+.promo__subs-event {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--clr-neutral-100);
+  white-space: nowrap;
+}
+
+.promo__subs-event::after {
+  content: "";
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/arrow-right.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  rotate: 90deg;
+  transition: rotate .5s ease 0s;
+}
+
+.promo__subs-event:hover,
+.promo__subs-event:focus {
+  text-decoration: underline;
+}
+
+.promo__subs-event:hover::after,
+.promo__subs-event:focus::after {
+  rotate: 270deg;
 }
 
 @media (min-width: 768px) {
@@ -136,7 +179,6 @@
 
   .promo__title {
     margin-bottom: 20px;
-    font-size: 36px;
   }
 
   .promo__description {
@@ -150,13 +192,29 @@
   }
 
   .promo__wait {
-    margin-bottom: 169px;
+    margin-bottom: 154px;
   }
 
   .promo__subs {
     min-height: 160px;
-    padding-top: 59px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .promo__subs-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .promo__subs-form {
+    min-width: 0;
+  }
+
+  .promo__subs-event {
+    margin-left: 0;
+    font-size: 16px;
   }
 }
 
@@ -171,12 +229,69 @@
   }
 
   .promo__wait {
-    margin-bottom: 86px;
+    margin-bottom: 120px;
   }
 
   .promo__subs {
     min-height: 141px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .promo__subs-content {
+    gap: 16px;
+  }
+}
+
+@keyframes slideDecorBefore {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDecorAfter {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  40% {
+    opacity: 0;
+    // transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

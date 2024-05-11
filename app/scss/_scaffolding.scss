@@ -6,6 +6,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -57,4 +58,37 @@ svg {
 
 .hidden {
   display: none;
+}
+
+.title {
+  font-size: 72px;
+  line-height: 1.04;
+  font-weight: var(--fw-bold);
+  text-align: center;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--clr-primary-400) 39%, transparent);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+.an {
+  animation: slideAndFadeIn 2s forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes slideAndFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

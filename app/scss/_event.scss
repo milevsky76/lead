@@ -1,0 +1,30 @@
+.event {
+  padding-top: 110px;
+  padding-bottom: 100px;
+}
+
+.event__title {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.event__accordion {}
+
+@media (max-width: 768px) {
+  .event {
+    padding-top: 46px;
+    padding-bottom: 48px;
+  }
+
+  .event__title {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .event {
+    padding-top: 59px;
+    padding-bottom: 52px;
+  }
+}
